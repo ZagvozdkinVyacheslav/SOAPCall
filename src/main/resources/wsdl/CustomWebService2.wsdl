@@ -1,0 +1,1200 @@
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://cloud.mos.ru/customWebService2/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://cloud.mos.ru/customWebService2/" name="CustomWebService">
+    <wsp:Policy wsu:Id="AdaptersWebServicePortBinding_MTOM_Policy">
+        <ns1:OptimizedMimeSerialization xmlns:ns1="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true"/>
+    </wsp:Policy>
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://jaxb.dev.java.net/array" schemaLocation="CustomWebService2_schema1.xsd"/>
+        </xsd:schema>
+        <xsd:schema>
+            <xsd:import namespace="http://cloud.mos.ru/customWebService2/" schemaLocation="CustomWebService2_schema2.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="GetChildren">
+        <part name="parameters" element="tns:GetChildren"/>
+    </message>
+    <message name="GetChildrenResponse">
+        <part name="parameters" element="tns:DocumentIDs"/>
+    </message>
+    <message name="ErrorMessageException_Exception">
+        <part name="fault" element="tns:ErrorMessageException"/>
+    </message>
+    <message name="GetDigest">
+        <part name="parameters" element="tns:GetDigest"/>
+    </message>
+    <message name="GetDigestResponse">
+        <part name="parameters" element="tns:DigestInfoArray"/>
+    </message>
+    <message name="GetFileNetId">
+        <part name="GetFileNetId" element="tns:GetFileNetId"/>
+    </message>
+    <message name="GetFileNetIdResponse">
+        <part name="FileNetId" element="tns:FileNetId"/>
+    </message>
+    <message name="CreateDocument">
+        <part name="CreateDocument" element="tns:CreateDocument"/>
+    </message>
+    <message name="CreateDocumentResponse">
+        <part name="CustomID" element="tns:CustomID"/>
+    </message>
+    <message name="UpdateDocumentVersion">
+        <part name="UpdateDocumentVersion" element="tns:UpdateDocumentVersion"/>
+    </message>
+    <message name="UpdateDocumentVersionResponse">
+        <part name="UpdatedId" element="tns:UpdatedId"/>
+    </message>
+    <message name="GetDocumentData">
+        <part name="GetDocumentData" element="tns:GetDocumentData"/>
+    </message>
+    <message name="GetDocumentDataResponse">
+        <part name="DocumentData" element="tns:DocumentData"/>
+    </message>
+    <message name="GetDocumentProperties">
+        <part name="parameters" element="tns:GetDocumentProperties"/>
+    </message>
+    <message name="GetDocumentPropertiesResponse">
+        <part name="parameters" element="tns:GetDocumentPropertiesResponse"/>
+    </message>
+    <message name="GetConvertedDocument">
+        <part name="GetConvertedDocument" element="tns:GetConvertedDocument"/>
+    </message>
+    <message name="GetConvertedDocumentResponse">
+        <part name="DocumentID" element="tns:DocumentID"/>
+    </message>
+    <message name="SearchDocuments">
+        <part name="parameters" element="tns:SearchDocuments"/>
+    </message>
+    <message name="SearchDocumentsResponse">
+        <part name="parameters" element="tns:CustomIDs"/>
+    </message>
+    <message name="DeleteDocuments">
+        <part name="DeleteDocuments" element="tns:DeleteDocuments"/>
+    </message>
+    <message name="DeleteDocumentsResponse">
+        <part name="NumOfDeleted" element="tns:NumOfDeleted"/>
+    </message>
+    <message name="CreateFolder">
+        <part name="CreateFolder" element="tns:CreateFolder"/>
+    </message>
+    <message name="CreateFolderResponse">
+        <part name="FolderPath" element="tns:FolderPath"/>
+    </message>
+    <message name="GetDocumentsInFolder">
+        <part name="parameters" element="tns:GetDocumentsInFolder"/>
+    </message>
+    <message name="GetDocumentsInFolderResponse">
+        <part name="parameters" element="tns:DocumentsInFolder"/>
+    </message>
+    <message name="GetDocument">
+        <part name="parameters" element="tns:GetDocument"/>
+    </message>
+    <message name="GetDocumentResponse">
+        <part name="parameters" element="tns:GetDocumentResponse"/>
+    </message>
+    <message name="ValidateCertificate">
+        <part name="ValidateCertificate" element="tns:ValidateCertificate"/>
+    </message>
+    <message name="ValidateCertificateResponse">
+        <part name="ValidateCertificateResponse" element="tns:ValidateCertificateResponse"/>
+    </message>
+    <message name="UpdateDocumentProperties">
+        <part name="UpdateDocumentProperties" element="tns:UpdateDocumentProperties"/>
+    </message>
+    <message name="UpdateDocumentPropertiesResponse">
+        <part name="UpdateDocumentPropertiesResponse" element="tns:UpdateDocumentPropertiesResponse"/>
+    </message>
+    <message name="CreateMultipleAnnotations">
+        <part name="CreateMultipleAnnotationsRequest" element="tns:CreateMultipleAnnotationsRequest"/>
+    </message>
+    <message name="CreateMultipleAnnotationsResponse">
+        <part name="MultipleAnnotationsArray" element="tns:MultipleAnnotationsArray"/>
+    </message>
+    <message name="ValidateDocumentSignatures">
+        <part name="parameters" element="tns:ValidateDocumentSignatures"/>
+    </message>
+    <message name="ValidateDocumentSignaturesResponse">
+        <part name="parameters" element="tns:SignatureStatusArray"/>
+    </message>
+    <message name="ValidateDocumentWithInfo">
+        <part name="parameters" element="tns:ValidateDocumentWithInfo"/>
+    </message>
+    <message name="ValidateDocumentWithInfoResponse">
+        <part name="parameters" element="tns:ValidateDocumentWithInfoResponse"/>
+    </message>
+    <message name="ValidateExternalSignature">
+        <part name="parameters" element="tns:ValidateExternalSignature"/>
+    </message>
+    <message name="ValidateExternalSignatureResponse">
+        <part name="parameters" element="tns:ValidateExternalSignatureResponse"/>
+    </message>
+    <message name="GetStringListProperty">
+        <part name="parameters" element="tns:GetStringListProperty"/>
+    </message>
+    <message name="GetStringListPropertyResponse">
+        <part name="parameters" element="tns:GetStringListPropertyResponse"/>
+    </message>
+    <message name="AppendStringListProperty">
+        <part name="parameters" element="tns:AppendStringListProperty"/>
+    </message>
+    <message name="AppendStringListPropertyResponse">
+        <part name="parameters" element="tns:AppendStringListPropertyResponse"/>
+    </message>
+    <message name="RemoveFromStringListProperty">
+        <part name="parameters" element="tns:RemoveFromStringListProperty"/>
+    </message>
+    <message name="RemoveFromStringListPropertyResponse">
+        <part name="parameters" element="tns:RemoveFromStringListPropertyResponse"/>
+    </message>
+    <message name="GetCustomId">
+        <part name="GetCustomId" element="tns:GetCustomId"/>
+    </message>
+    <message name="GetCustomIdResponse">
+        <part name="CustomId" element="tns:CustomId"/>
+    </message>
+    <message name="FolderDocument">
+        <part name="FolderDocument" element="tns:FolderDocument"/>
+    </message>
+    <message name="FolderDocumentResponse">
+        <part name="FolderDocumentResponse" element="tns:FolderDocumentResponse"/>
+    </message>
+    <message name="SearchDocumentsInFolder">
+        <part name="parameters" element="tns:SearchDocumentsInFolder"/>
+    </message>
+    <message name="SearchDocumentsInFolderResponse">
+        <part name="parameters" element="tns:DocumentClassArray"/>
+    </message>
+    <message name="GetDocumentsProperties">
+        <part name="parameters" element="tns:GetDocumentsProperties"/>
+    </message>
+    <message name="GetDocumentsPropertiesResponse">
+        <part name="parameters" element="tns:DocumentsPropertiesResponse"/>
+    </message>
+    <message name="GetAuthProperties">
+        <part name="parameters" element="tns:GetAuthProperties"/>
+    </message>
+    <message name="GetAuthPropertiesResponse">
+        <part name="parameters" element="tns:AuthPropertiesResponse"/>
+    </message>
+    <message name="CreateAnnotation">
+        <part name="CreateAnnotation" element="tns:CreateAnnotation"/>
+    </message>
+    <message name="CreateAnnotationResponse">
+        <part name="AnnotationId" element="tns:AnnotationId"/>
+    </message>
+    <message name="RetrieveAnnotations">
+        <part name="parameters" element="tns:RetrieveAnnotations"/>
+    </message>
+    <message name="RetrieveAnnotationsResponse">
+        <part name="parameters" element="tns:AnnotationIds"/>
+    </message>
+    <message name="DeleteAnnotation">
+        <part name="DeleteAnnotation" element="tns:DeleteAnnotation"/>
+    </message>
+    <message name="DeleteAnnotationResponse">
+        <part name="DeleteAnnotationResult" element="tns:DeleteAnnotationResult"/>
+    </message>
+    <message name="RetrieveAnnotation">
+        <part name="RetrieveAnnotation" element="tns:RetrieveAnnotation"/>
+    </message>
+    <message name="RetrieveAnnotationResponse">
+        <part name="Annotation" element="tns:Annotation"/>
+    </message>
+    <message name="ValidateDocument">
+        <part name="parameters" element="tns:ValidateDocument"/>
+    </message>
+    <message name="ValidateDocumentResponse">
+        <part name="parameters" element="tns:ValidateDocumentStatuses"/>
+    </message>
+    <message name="GetFoldersOfDocument">
+        <part name="parameters" element="tns:GetFoldersOfDocument"/>
+    </message>
+    <message name="GetFoldersOfDocumentResponse">
+        <part name="parameters" element="tns:FoldersOfDocument"/>
+    </message>
+    <message name="GetSignedDocumentData">
+        <part name="GetSignedDocumentData" element="tns:GetSignedDocumentData"/>
+    </message>
+    <message name="GetSignedDocumentDataResponse">
+        <part name="SignedDocumentData" element="tns:SignedDocumentData"/>
+    </message>
+    <message name="DeleteDocumentVersion">
+        <part name="DeleteDocumentVersion" element="tns:DeleteDocumentVersion"/>
+    </message>
+    <message name="DeleteDocumentVersionResponse">
+        <part name="DeleteDocumentVersionResponse" element="tns:DeleteDocumentVersionResponse"/>
+    </message>
+    <message name="GetDocumentPermissions">
+        <part name="parameters" element="tns:GetDocumentPermissions"/>
+    </message>
+    <message name="GetDocumentPermissionsResponse">
+        <part name="parameters" element="tns:PermissionsOfDocument"/>
+    </message>
+    <message name="SetDocumentPermissions">
+        <part name="SetDocumentPermissions" element="tns:SetDocumentPermissions"/>
+    </message>
+    <message name="SetDocumentPermissionsResponse">
+        <part name="SetDocumentPermissionsResponse" element="tns:SetDocumentPermissionsResponse"/>
+    </message>
+    <message name="GetFoldersInFolder">
+        <part name="parameters" element="tns:GetFoldersInFolder"/>
+    </message>
+    <message name="GetFoldersInFolderResponse">
+        <part name="parameters" element="tns:FoldersInFolder"/>
+    </message>
+    <message name="GetParentFolder">
+        <part name="GetParentFolder" element="tns:GetParentFolder"/>
+    </message>
+    <message name="GetParentFolderResponse">
+        <part name="ParentFolder" element="tns:ParentFolder"/>
+    </message>
+    <message name="SetFolderPermissions">
+        <part name="SetFolderPermissions" element="tns:SetFolderPermissions"/>
+    </message>
+    <message name="SetFolderPermissionsResponse">
+        <part name="SetFolderPermissionsResponse" element="tns:SetFolderPermissionsResponse"/>
+    </message>
+    <message name="GetFolderPermissions">
+        <part name="parameters" element="tns:GetFolderPermissions"/>
+    </message>
+    <message name="GetFolderPermissionsResponse">
+        <part name="parameters" element="tns:PermissionsOfFolder"/>
+    </message>
+    <message name="CopyDocument">
+        <part name="CopyDocument" element="tns:CopyDocument"/>
+    </message>
+    <message name="CopyDocumentResponse">
+        <part name="FileNetId" element="tns:FileNetId"/>
+    </message>
+    <message name="moveDocument">
+        <part name="moveDocument" element="tns:moveDocument"/>
+    </message>
+    <message name="moveDocumentResponse">
+        <part name="movedCustomId" element="tns:movedCustomId"/>
+    </message>
+    <message name="CancelDeferredSign">
+        <part name="CancelDeferredSign" element="tns:CancelDeferredSign"/>
+    </message>
+    <message name="CancelDeferredSignResponse">
+        <part name="CancelDeferredSignResult" element="tns:CancelDeferredSignResult"/>
+    </message>
+    <message name="ArchiveDocuments">
+        <part name="parameters" element="tns:ArchiveDocuments"/>
+    </message>
+    <message name="ArchiveDocumentsResponse">
+        <part name="parameters" element="tns:ArchiveDocumentsResponse"/>
+    </message>
+    <message name="RestoreDocuments">
+        <part name="parameters" element="tns:RestoreDocuments"/>
+    </message>
+    <message name="RestoreDocumentsResponse">
+        <part name="parameters" element="tns:RestoreDocumentsResponse"/>
+    </message>
+    <message name="CreateDeferredAnnotations">
+        <part name="CreateDeferredAnnotationsRequest" element="tns:CreateDeferredAnnotationsRequest"/>
+    </message>
+    <message name="CreateDeferredAnnotationsResponse">
+        <part name="DeferredTaskId" element="tns:DeferredTaskId"/>
+    </message>
+    <message name="RetrieveDocAndAnnotations">
+        <part name="parameters" element="tns:RetrieveDocAndAnnotations"/>
+    </message>
+    <message name="RetrieveDocAndAnnotationsResponse">
+        <part name="parameters" element="tns:RetrieveDocAndAnnotationsResponse"/>
+    </message>
+    <message name="RetrieveDocumentAndSignatures">
+        <part name="parameters" element="tns:RetrieveDocumentAndSignatures"/>
+    </message>
+    <message name="RetrieveDocumentAndSignaturesResponse">
+        <part name="parameters" element="tns:RetrieveDocumentAndSignaturesResponse"/>
+    </message>
+    <message name="FindDocuments">
+        <part name="parameters" element="tns:FindDocuments"/>
+    </message>
+    <message name="FindDocumentsResponse">
+        <part name="parameters" element="tns:FoundedDocuments"/>
+    </message>
+    <message name="GetAnnotations">
+        <part name="parameters" element="tns:GetAnnotations"/>
+    </message>
+    <message name="GetAnnotationsResponse">
+        <part name="parameters" element="tns:GetAnnotationsResponse"/>
+    </message>
+    <portType name="CustomWebServiceImpl">
+        <operation name="GetChildren">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetChildrenRequest" message="tns:GetChildren"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetChildrenResponse" message="tns:GetChildrenResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetChildren/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetDigest">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDigestRequest" message="tns:GetDigest"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDigestResponse" message="tns:GetDigestResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDigest/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetFileNetId">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetFileNetIdRequest" message="tns:GetFileNetId"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetFileNetIdResponse" message="tns:GetFileNetIdResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetFileNetId/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="CreateDocument">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateDocumentRequest" message="tns:CreateDocument"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateDocumentResponse" message="tns:CreateDocumentResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateDocument/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="UpdateDocumentVersion">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/UpdateDocumentVersionRequest" message="tns:UpdateDocumentVersion"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/UpdateDocumentVersionResponse" message="tns:UpdateDocumentVersionResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/UpdateDocumentVersion/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetDocumentData">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentDataRequest" message="tns:GetDocumentData"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentDataResponse" message="tns:GetDocumentDataResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentData/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetDocumentProperties">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentPropertiesRequest" message="tns:GetDocumentProperties"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentPropertiesResponse" message="tns:GetDocumentPropertiesResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentProperties/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetConvertedDocument">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetConvertedDocumentRequest" message="tns:GetConvertedDocument"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetConvertedDocumentResponse" message="tns:GetConvertedDocumentResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetConvertedDocument/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="SearchDocuments">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/SearchDocumentsRequest" message="tns:SearchDocuments"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/SearchDocumentsResponse" message="tns:SearchDocumentsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/SearchDocuments/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="DeleteDocuments">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/DeleteDocumentsRequest" message="tns:DeleteDocuments"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/DeleteDocumentsResponse" message="tns:DeleteDocumentsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/DeleteDocuments/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="CreateFolder">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateFolderRequest" message="tns:CreateFolder"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateFolderResponse" message="tns:CreateFolderResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateFolder/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetDocumentsInFolder">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentsInFolderRequest" message="tns:GetDocumentsInFolder"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentsInFolderResponse" message="tns:GetDocumentsInFolderResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentsInFolder/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetDocument">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentRequest" message="tns:GetDocument"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentResponse" message="tns:GetDocumentResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocument/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="ValidateCertificate">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateCertificateRequest" message="tns:ValidateCertificate"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateCertificateResponse" message="tns:ValidateCertificateResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateCertificate/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="UpdateDocumentProperties">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/UpdateDocumentPropertiesRequest" message="tns:UpdateDocumentProperties"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/UpdateDocumentPropertiesResponse" message="tns:UpdateDocumentPropertiesResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/UpdateDocumentProperties/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="CreateMultipleAnnotations">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateMultipleAnnotationsRequest" message="tns:CreateMultipleAnnotations"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateMultipleAnnotationsResponse" message="tns:CreateMultipleAnnotationsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateMultipleAnnotations/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="ValidateDocumentSignatures">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateDocumentSignaturesRequest" message="tns:ValidateDocumentSignatures"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateDocumentSignaturesResponse" message="tns:ValidateDocumentSignaturesResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateDocumentSignatures/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="ValidateDocumentWithInfo">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateDocumentWithInfoRequest" message="tns:ValidateDocumentWithInfo"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateDocumentWithInfoResponse" message="tns:ValidateDocumentWithInfoResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateDocumentWithInfo/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="ValidateExternalSignature">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateExternalSignatureRequest" message="tns:ValidateExternalSignature"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateExternalSignatureResponse" message="tns:ValidateExternalSignatureResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateExternalSignature/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetStringListProperty">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetStringListPropertyRequest" message="tns:GetStringListProperty"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetStringListPropertyResponse" message="tns:GetStringListPropertyResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetStringListProperty/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="AppendStringListProperty">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/AppendStringListPropertyRequest" message="tns:AppendStringListProperty"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/AppendStringListPropertyResponse" message="tns:AppendStringListPropertyResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/AppendStringListProperty/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="RemoveFromStringListProperty">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RemoveFromStringListPropertyRequest" message="tns:RemoveFromStringListProperty"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RemoveFromStringListPropertyResponse" message="tns:RemoveFromStringListPropertyResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RemoveFromStringListProperty/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetCustomId">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetCustomIdRequest" message="tns:GetCustomId"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetCustomIdResponse" message="tns:GetCustomIdResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetCustomId/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="FolderDocument">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/FolderDocumentRequest" message="tns:FolderDocument"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/FolderDocumentResponse" message="tns:FolderDocumentResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/FolderDocument/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="SearchDocumentsInFolder">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/SearchDocumentsInFolderRequest" message="tns:SearchDocumentsInFolder"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/SearchDocumentsInFolderResponse" message="tns:SearchDocumentsInFolderResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/SearchDocumentsInFolder/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetDocumentsProperties">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentsPropertiesRequest" message="tns:GetDocumentsProperties"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentsPropertiesResponse" message="tns:GetDocumentsPropertiesResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentsProperties/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetAuthProperties">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetAuthPropertiesRequest" message="tns:GetAuthProperties"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetAuthPropertiesResponse" message="tns:GetAuthPropertiesResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetAuthProperties/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="CreateAnnotation">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateAnnotationRequest" message="tns:CreateAnnotation"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateAnnotationResponse" message="tns:CreateAnnotationResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateAnnotation/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="RetrieveAnnotations">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RetrieveAnnotationsRequest" message="tns:RetrieveAnnotations"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RetrieveAnnotationsResponse" message="tns:RetrieveAnnotationsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RetrieveAnnotations/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="DeleteAnnotation">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/DeleteAnnotationRequest" message="tns:DeleteAnnotation"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/DeleteAnnotationResponse" message="tns:DeleteAnnotationResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/DeleteAnnotation/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="RetrieveAnnotation">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RetrieveAnnotationRequest" message="tns:RetrieveAnnotation"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RetrieveAnnotationResponse" message="tns:RetrieveAnnotationResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RetrieveAnnotation/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="ValidateDocument">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateDocumentRequest" message="tns:ValidateDocument"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateDocumentResponse" message="tns:ValidateDocumentResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ValidateDocument/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetFoldersOfDocument">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetFoldersOfDocumentRequest" message="tns:GetFoldersOfDocument"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetFoldersOfDocumentResponse" message="tns:GetFoldersOfDocumentResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetFoldersOfDocument/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetSignedDocumentData">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetSignedDocumentDataRequest" message="tns:GetSignedDocumentData"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetSignedDocumentDataResponse" message="tns:GetSignedDocumentDataResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetSignedDocumentData/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="DeleteDocumentVersion">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/DeleteDocumentVersionRequest" message="tns:DeleteDocumentVersion"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/DeleteDocumentVersionResponse" message="tns:DeleteDocumentVersionResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/DeleteDocumentVersion/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetDocumentPermissions">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentPermissionsRequest" message="tns:GetDocumentPermissions"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentPermissionsResponse" message="tns:GetDocumentPermissionsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetDocumentPermissions/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="SetDocumentPermissions">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/SetDocumentPermissionsRequest" message="tns:SetDocumentPermissions"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/SetDocumentPermissionsResponse" message="tns:SetDocumentPermissionsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/SetDocumentPermissions/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetFoldersInFolder">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetFoldersInFolderRequest" message="tns:GetFoldersInFolder"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetFoldersInFolderResponse" message="tns:GetFoldersInFolderResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetFoldersInFolder/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetParentFolder">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetParentFolderRequest" message="tns:GetParentFolder"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetParentFolderResponse" message="tns:GetParentFolderResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetParentFolder/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="SetFolderPermissions">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/SetFolderPermissionsRequest" message="tns:SetFolderPermissions"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/SetFolderPermissionsResponse" message="tns:SetFolderPermissionsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/SetFolderPermissions/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetFolderPermissions">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetFolderPermissionsRequest" message="tns:GetFolderPermissions"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetFolderPermissionsResponse" message="tns:GetFolderPermissionsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetFolderPermissions/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="CopyDocument">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CopyDocumentRequest" message="tns:CopyDocument"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CopyDocumentResponse" message="tns:CopyDocumentResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CopyDocument/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="moveDocument">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/moveDocumentRequest" message="tns:moveDocument"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/moveDocumentResponse" message="tns:moveDocumentResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/moveDocument/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="CancelDeferredSign">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CancelDeferredSignRequest" message="tns:CancelDeferredSign"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CancelDeferredSignResponse" message="tns:CancelDeferredSignResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CancelDeferredSign/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="ArchiveDocuments">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ArchiveDocumentsRequest" message="tns:ArchiveDocuments"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ArchiveDocumentsResponse" message="tns:ArchiveDocumentsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/ArchiveDocuments/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="RestoreDocuments">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RestoreDocumentsRequest" message="tns:RestoreDocuments"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RestoreDocumentsResponse" message="tns:RestoreDocumentsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RestoreDocuments/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="CreateDeferredAnnotations">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateDeferredAnnotationsRequest" message="tns:CreateDeferredAnnotations"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateDeferredAnnotationsResponse" message="tns:CreateDeferredAnnotationsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/CreateDeferredAnnotations/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="RetrieveDocAndAnnotations">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RetrieveDocAndAnnotationsRequest" message="tns:RetrieveDocAndAnnotations"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RetrieveDocAndAnnotationsResponse" message="tns:RetrieveDocAndAnnotationsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RetrieveDocAndAnnotations/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="RetrieveDocumentAndSignatures">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RetrieveDocumentAndSignaturesRequest" message="tns:RetrieveDocumentAndSignatures"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RetrieveDocumentAndSignaturesResponse" message="tns:RetrieveDocumentAndSignaturesResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/RetrieveDocumentAndSignatures/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="FindDocuments">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/FindDocumentsRequest" message="tns:FindDocuments"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/FindDocumentsResponse" message="tns:FindDocumentsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/FindDocuments/Fault/ErrorMessageException"/>
+        </operation>
+        <operation name="GetAnnotations">
+            <input wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetAnnotationsRequest" message="tns:GetAnnotations"/>
+            <output wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetAnnotationsResponse" message="tns:GetAnnotationsResponse"/>
+            <fault message="tns:ErrorMessageException_Exception" name="ErrorMessageException_Exception" wsam:Action="http://cloud.mos.ru/customWebService2/CustomWebServiceImpl/GetAnnotations/Fault/ErrorMessageException"/>
+        </operation>
+    </portType>
+    <binding name="AdaptersWebServicePortBinding" type="tns:CustomWebServiceImpl">
+        <wsp:PolicyReference URI="#AdaptersWebServicePortBinding_MTOM_Policy"/>
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="GetChildren">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetDigest">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetFileNetId">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="CreateDocument">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="UpdateDocumentVersion">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetDocumentData">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetDocumentProperties">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetConvertedDocument">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="SearchDocuments">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="DeleteDocuments">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="CreateFolder">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetDocumentsInFolder">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetDocument">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="ValidateCertificate">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="UpdateDocumentProperties">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="CreateMultipleAnnotations">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="ValidateDocumentSignatures">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="ValidateDocumentWithInfo">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="ValidateExternalSignature">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetStringListProperty">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="AppendStringListProperty">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="RemoveFromStringListProperty">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetCustomId">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="FolderDocument">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="SearchDocumentsInFolder">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetDocumentsProperties">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetAuthProperties">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="CreateAnnotation">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="RetrieveAnnotations">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="DeleteAnnotation">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="RetrieveAnnotation">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="ValidateDocument">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetFoldersOfDocument">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetSignedDocumentData">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="DeleteDocumentVersion">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetDocumentPermissions">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="SetDocumentPermissions">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetFoldersInFolder">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetParentFolder">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="SetFolderPermissions">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetFolderPermissions">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="CopyDocument">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="moveDocument">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="CancelDeferredSign">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="ArchiveDocuments">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="RestoreDocuments">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="CreateDeferredAnnotations">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="RetrieveDocAndAnnotations">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="RetrieveDocumentAndSignatures">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="FindDocuments">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="GetAnnotations">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ErrorMessageException_Exception">
+                <soap:fault name="ErrorMessageException_Exception" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="CustomWebService">
+        <port name="AdaptersWebServicePort" binding="tns:AdaptersWebServicePortBinding">
+            <soap:address location="http://doc-upload2-stage.mos.ru:80/adapters/CustomWebService2"/>
+        </port>
+    </service>
+</definitions>

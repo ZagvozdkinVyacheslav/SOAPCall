@@ -1,0 +1,669 @@
+<xs:schema xmlns:tns="http://cloud.mos.ru/customWebService2/" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://cloud.mos.ru/customWebService2/">
+  <xs:import namespace="http://jaxb.dev.java.net/array" schemaLocation="CustomWebService2_schema1.xsd"/>
+  <xs:import namespace="http://www.w3.org/2005/05/xmlmime" schemaLocation="https://www.w3.org/2005/05/xmlmime"/>
+  <xs:element name="Annotation" type="xs:base64Binary"/>
+  <xs:element name="AnnotationId" type="xs:string"/>
+  <xs:element name="AnnotationIds" type="ns1:stringArray"/>
+  <xs:element name="AppendStringListProperty" type="tns:AppendStringListPropertyRequest"/>
+  <xs:element name="AppendStringListPropertyResponse" type="tns:GetStringListPropertyResponse"/>
+  <xs:element name="ArchiveDocuments" type="tns:ChangeStorageAreaRequest"/>
+  <xs:element name="ArchiveDocumentsResponse" type="tns:ChangeStorageAreaResponse"/>
+  <xs:element name="AuthPropertiesResponse" type="tns:DocumentsStringListPropertiesResponse"/>
+  <xs:element name="CancelDeferredSign" type="tns:CancelDeferredSignRequest"/>
+  <xs:element name="CancelDeferredSignResult" type="xs:boolean"/>
+  <xs:element name="CopyDocument" type="tns:CopyDocumentRequest"/>
+  <xs:element name="CreateAnnotation" type="tns:CreateAnnotationRequest"/>
+  <xs:element name="CreateDeferredAnnotationsRequest" type="tns:CreateDefferedAnnotationsRequest"/>
+  <xs:element name="CreateDocument" type="tns:CreateDocumentRequest"/>
+  <xs:element name="CreateFolder" type="tns:CreateFolderRequest"/>
+  <xs:element name="CreateMultipleAnnotationsRequest" type="tns:CreateMultipleAnnotationsRequest"/>
+  <xs:element name="CustomID" type="xs:string"/>
+  <xs:element name="CustomIDs" type="ns1:stringArray"/>
+  <xs:element name="CustomId" type="xs:string"/>
+  <xs:element name="DeferredTaskId" type="xs:string"/>
+  <xs:element name="DeleteAnnotation" type="tns:RetrieveAnnotationRequest"/>
+  <xs:element name="DeleteAnnotationResult" type="xs:boolean"/>
+  <xs:element name="DeleteDocumentVersion" type="tns:DeleteDocumentVersionRequest"/>
+  <xs:element name="DeleteDocumentVersionResponse" type="xs:string"/>
+  <xs:element name="DeleteDocuments" type="tns:DeleteDocumentsRequest"/>
+  <xs:element name="DigestInfoArray" type="tns:DigestInfoArray"/>
+  <xs:element name="DocumentClassArray" type="tns:DocumentClassArray"/>
+  <xs:element name="DocumentData" type="xs:base64Binary"/>
+  <xs:element name="DocumentID" type="xs:string"/>
+  <xs:element name="DocumentIDs" type="ns1:stringArray"/>
+  <xs:element name="DocumentsInFolder" type="ns1:stringArray"/>
+  <xs:element name="DocumentsPropertiesResponse" type="tns:DocumentsPropertiesResponse"/>
+  <xs:element name="ErrorMessageException" type="tns:ErrorMessageException"/>
+  <xs:element name="FileNetId" type="xs:string"/>
+  <xs:element name="FindDocuments" type="tns:FindDocumentsRequest"/>
+  <xs:element name="FolderDocument" type="tns:FolderDocumentRequest"/>
+  <xs:element name="FolderDocumentResponse" type="xs:string"/>
+  <xs:element name="FolderPath" type="xs:string"/>
+  <xs:element name="FoldersInFolder" type="ns1:stringArray"/>
+  <xs:element name="FoldersOfDocument" type="ns1:stringArray"/>
+  <xs:element name="FoundedDocuments" type="tns:DocumentsPropertiesResponse"/>
+  <xs:element name="GetAnnotations" type="tns:GetAnnotationsRequest"/>
+  <xs:element name="GetAnnotationsResponse" type="tns:Annotations"/>
+  <xs:element name="GetAuthProperties" type="tns:GetDocumentsPropertiesRequest"/>
+  <xs:element name="GetChildren" type="tns:GetDocumentRequest"/>
+  <xs:element name="GetConvertedDocument" type="tns:GetDocumentRequest"/>
+  <xs:element name="GetCustomId" type="tns:GetDocumentRequest"/>
+  <xs:element name="GetDigest" type="tns:GetDigestRequest"/>
+  <xs:element name="GetDocument" type="tns:GetDocumentRequest"/>
+  <xs:element name="GetDocumentData" type="tns:GetDocumentRequest"/>
+  <xs:element name="GetDocumentPermissions" type="tns:GetDocumentPermissionsRequest"/>
+  <xs:element name="GetDocumentProperties" type="tns:GetDocumentRequest"/>
+  <xs:element name="GetDocumentPropertiesResponse" type="tns:GetDocumentPropertiesResponse"/>
+  <xs:element name="GetDocumentResponse" type="tns:GetDocumentResponse"/>
+  <xs:element name="GetDocumentsInFolder" type="tns:GetFilesInFolderRequest"/>
+  <xs:element name="GetDocumentsProperties" type="tns:GetDocumentsPropertiesRequest"/>
+  <xs:element name="GetFileNetId" type="tns:GetDocumentRequest"/>
+  <xs:element name="GetFolderPermissions" type="tns:GetFolderPermissionsRequest"/>
+  <xs:element name="GetFoldersInFolder" type="tns:GetFilesInFolderRequest"/>
+  <xs:element name="GetFoldersOfDocument" type="tns:GetFoldersOfDocumentRequest"/>
+  <xs:element name="GetParentFolder" type="tns:GetParentFolderRequest"/>
+  <xs:element name="GetSignedDocumentData" type="tns:GetDocumentRequest"/>
+  <xs:element name="GetStringListProperty" type="tns:GetStringListPropertyRequest"/>
+  <xs:element name="GetStringListPropertyResponse" type="tns:GetStringListPropertyResponse"/>
+  <xs:element name="MultipleAnnotationsArray" type="tns:MultipleAnnotationsArray"/>
+  <xs:element name="NumOfDeleted" type="xs:int"/>
+  <xs:element name="ParentFolder" type="xs:string"/>
+  <xs:element name="PermissionsOfDocument" type="tns:GetPermissionsResponse"/>
+  <xs:element name="PermissionsOfFolder" type="tns:GetPermissionsResponse"/>
+  <xs:element name="RemoveFromStringListProperty" type="tns:AppendStringListPropertyRequest"/>
+  <xs:element name="RemoveFromStringListPropertyResponse" type="tns:GetStringListPropertyResponse"/>
+  <xs:element name="RestoreDocuments" type="tns:ChangeStorageAreaRequest"/>
+  <xs:element name="RestoreDocumentsResponse" type="tns:ChangeStorageAreaResponse"/>
+  <xs:element name="RetrieveAnnotation" type="tns:RetrieveAnnotationRequest"/>
+  <xs:element name="RetrieveAnnotations" type="tns:GetDocumentRequest"/>
+  <xs:element name="RetrieveDocAndAnnotations" type="tns:GetDocumentRequest"/>
+  <xs:element name="RetrieveDocAndAnnotationsResponse" type="tns:RetrieveDocAndAnnotationsResponse"/>
+  <xs:element name="RetrieveDocumentAndSignatures" type="tns:GetAnnotationsRequest"/>
+  <xs:element name="RetrieveDocumentAndSignaturesResponse" type="tns:RetrieveDocAndAnnotationsResponse"/>
+  <xs:element name="SearchDocuments" type="tns:SearchDocumentsRequest"/>
+  <xs:element name="SearchDocumentsInFolder" type="tns:SearchDocumentsInFolderRequest"/>
+  <xs:element name="SetDocumentPermissions" type="tns:SetDocumentPermissionsRequest"/>
+  <xs:element name="SetDocumentPermissionsResponse" type="xs:string"/>
+  <xs:element name="SetFolderPermissions" type="tns:SetFolderPermissionsRequest"/>
+  <xs:element name="SetFolderPermissionsResponse" type="xs:string"/>
+  <xs:element name="SignatureStatusArray" type="tns:SignatureStatusArray"/>
+  <xs:element name="SignedDocumentData" type="xs:base64Binary"/>
+  <xs:element name="UpdateDocumentProperties" type="tns:UpdatePropertiesRequest"/>
+  <xs:element name="UpdateDocumentPropertiesResponse" type="xs:string"/>
+  <xs:element name="UpdateDocumentVersion" type="tns:UpdateDocumentRequest"/>
+  <xs:element name="UpdatedId" type="xs:string"/>
+  <xs:element name="ValidateCertificate" type="xs:base64Binary"/>
+  <xs:element name="ValidateCertificateResponse" type="tns:ValidateCertificateResponse"/>
+  <xs:element name="ValidateDocument" type="tns:GetDocumentRequest"/>
+  <xs:element name="ValidateDocumentSignatures" type="tns:ValidateDocumentRequest"/>
+  <xs:element name="ValidateDocumentStatuses" type="tns:booleanArray"/>
+  <xs:element name="ValidateDocumentWithInfo" type="tns:GetDocumentRequest"/>
+  <xs:element name="ValidateDocumentWithInfoResponse" type="tns:ValidateDocumentWithInfoResponse"/>
+  <xs:element name="ValidateExternalSignature" type="tns:ValidateExternalSignature"/>
+  <xs:element name="ValidateExternalSignatureResponse" type="tns:SignatureInfoObjResponse"/>
+  <xs:element name="moveDocument" type="tns:GetDocumentRequest"/>
+  <xs:element name="movedCustomId" type="xs:string"/>
+  <xs:complexType name="GetDocumentPropertiesResponse">
+    <xs:sequence>
+      <xs:element name="properties" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Property" type="tns:Property" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Property">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string"/>
+      <xs:element name="Value" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CopyDocumentRequest">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string"/>
+      <xs:element name="targetURL" type="xs:string"/>
+      <xs:element name="targetOS" type="xs:string" minOccurs="0"/>
+      <xs:element name="targetUsername" type="xs:string" minOccurs="0"/>
+      <xs:element name="targetPassword" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateAnnotationRequest">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+      <xs:element name="Document" xmime:expectedContentTypes="application/octet-stream" type="xs:base64Binary"/>
+      <xs:element name="Description" type="xs:string"/>
+      <xs:element name="MimeType" type="xs:string"/>
+      <xs:element name="SignType" type="xs:string" minOccurs="0"/>
+      <xs:element name="FailOnErrors" type="xs:boolean" default="true"/>
+      <xs:element name="Properties" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Property" type="tns:Property" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateDefferedAnnotationsRequest">
+    <xs:sequence>
+      <xs:element name="TaskId" type="xs:string" minOccurs="0"/>
+      <xs:element name="AllSignCount" type="xs:int"/>
+      <xs:element name="HttpAddress" type="xs:string"/>
+      <xs:element name="PartAnnotationRequest" type="tns:AnnotationRequest" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AnnotationRequest">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+      <xs:element name="Annotation" xmime:expectedContentTypes="application/octet-stream" type="xs:base64Binary"/>
+      <xs:element name="SignType" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PartAnnotationRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:AnnotationRequest">
+        <xs:sequence>
+          <xs:element name="Properties" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Property" type="tns:Property" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateDocumentRequest">
+    <xs:sequence>
+      <xs:element name="Document" xmime:expectedContentTypes="application/octet-stream" type="xs:base64Binary"/>
+      <xs:element name="SSOID" type="xs:string"/>
+      <xs:element name="DocumentClass" type="xs:string"/>
+      <xs:element name="FromSystemCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="URN" type="xs:string" minOccurs="0"/>
+      <xs:element name="Path" type="xs:string" minOccurs="0"/>
+      <xs:element name="properties" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Property" type="tns:Property" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Server" type="xs:string" minOccurs="0"/>
+      <xs:element name="ServerStore" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateFolderRequest">
+    <xs:sequence>
+      <xs:element name="Path" type="xs:string"/>
+      <xs:element name="Server" type="xs:string" minOccurs="0"/>
+      <xs:element name="ServerStore" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RetrieveAnnotationRequest">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+      <xs:element name="AnnotationId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteDocumentVersionRequest">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+      <xs:element name="Version" type="tns:Version"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Version">
+    <xs:sequence>
+      <xs:element name="Major" type="xs:int"/>
+      <xs:element name="Minor" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeleteDocumentsRequest">
+    <xs:sequence>
+      <xs:element name="Documents" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FindDocumentsRequest">
+    <xs:sequence>
+      <xs:element name="documentClass" type="xs:string"/>
+      <xs:element name="searchChildren" type="xs:boolean" minOccurs="0"/>
+      <xs:element name="properties">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="entry" nillable="true" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="key" type="xs:string" minOccurs="0"/>
+                  <xs:element name="value" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="storage" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetDocumentPermissionsRequest">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+      <xs:element name="permissions" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Permission" type="tns:Permission" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Permission">
+    <xs:sequence>
+      <xs:element name="GranteeName" type="xs:string"/>
+      <xs:element name="AccessRights" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetStringListPropertyResponse">
+    <xs:sequence>
+      <xs:element name="values" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChangeStorageAreaRequest">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="storageArea" type="xs:string"/>
+      <xs:element name="objectStore" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentsStringListPropertiesResponse">
+    <xs:sequence>
+      <xs:element name="item" type="tns:DocumentStringListProperties" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentStringListProperties">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string"/>
+      <xs:element name="properties" type="tns:StringListProperty" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StringListProperty">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="values" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelDeferredSignRequest">
+    <xs:sequence>
+      <xs:element name="TaskId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CreateMultipleAnnotationsRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:CreateAnnotationsRequest">
+        <xs:sequence>
+          <xs:element name="FailOnErrors" type="xs:boolean" default="true" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CreateAnnotationsRequest" abstract="true">
+    <xs:sequence>
+      <xs:element name="PartAnnotationRequest" type="tns:PartAnnotationRequest" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentClassArray">
+    <xs:sequence>
+      <xs:element name="item" type="tns:DocumentClass" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentClass">
+    <xs:sequence>
+      <xs:element name="documentClass" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentsPropertiesResponse">
+    <xs:sequence>
+      <xs:element name="item" type="tns:DocumentProperties" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentProperties">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string"/>
+      <xs:element name="properties" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="property" type="tns:Property" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ErrorMessageException">
+    <xs:sequence>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FolderDocumentRequest">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+      <xs:element name="Path" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Annotations">
+    <xs:sequence>
+      <xs:element name="Annotation" type="tns:Annotation" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Annotation">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:string"/>
+      <xs:element name="File" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDocumentsPropertiesRequest">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="properties" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDocumentPermissionsRequest">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetFilesInFolderRequest">
+    <xs:sequence>
+      <xs:element name="Path" type="xs:string"/>
+      <xs:element name="Store" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetFolderPermissionsRequest">
+    <xs:sequence>
+      <xs:element name="Path" type="xs:string"/>
+      <xs:element name="Store" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetFoldersOfDocumentRequest">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetParentFolderRequest">
+    <xs:sequence>
+      <xs:element name="Path" type="xs:string"/>
+      <xs:element name="Store" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetStringListPropertyRequest">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string"/>
+      <xs:element name="property" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MultipleAnnotationsArray">
+    <xs:sequence>
+      <xs:element name="item" type="tns:MultipleAnnotations" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MultipleAnnotations">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string"/>
+      <xs:element name="annotationId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SearchDocumentsRequest">
+    <xs:sequence>
+      <xs:element name="searchQuery" type="xs:string"/>
+      <xs:element name="storeName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SignatureStatusArray">
+    <xs:sequence>
+      <xs:element name="item" type="tns:SignatureStatus" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SignatureStatus">
+    <xs:sequence>
+      <xs:element name="status" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidateCertificateResponse">
+    <xs:sequence>
+      <xs:element name="status" type="xs:string" minOccurs="0"/>
+      <xs:element name="issuer" type="xs:string" minOccurs="0"/>
+      <xs:element name="subject" type="xs:string" minOccurs="0"/>
+      <xs:element name="failInfo" type="xs:string" minOccurs="0"/>
+      <xs:element name="notAfter" type="xs:long" minOccurs="0"/>
+      <xs:element name="notBefore" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidateDocumentRequest">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+      <xs:element name="Annotation" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="booleanArray">
+    <xs:sequence>
+      <xs:element name="item" type="xs:boolean" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidateExternalSignature">
+    <xs:sequence>
+      <xs:element name="SignatureContent" xmime:expectedContentTypes="application/octet-stream" type="xs:base64Binary"/>
+      <xs:element name="DocumentContent" xmime:expectedContentTypes="application/octet-stream" type="xs:base64Binary" minOccurs="0"/>
+      <xs:element name="CreateAdvanced" type="xs:boolean" default="false"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SignatureInfoObjResponse">
+    <xs:sequence>
+      <xs:element name="Signer" type="xs:string" minOccurs="0"/>
+      <xs:element name="CertificateSerialNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="Issuer" type="xs:string" minOccurs="0"/>
+      <xs:element name="NotAfter" type="xs:long" minOccurs="0"/>
+      <xs:element name="NotBefore" type="xs:long" minOccurs="0"/>
+      <xs:element name="FailInfo" type="xs:string" minOccurs="0"/>
+      <xs:element name="Status" type="xs:string" minOccurs="0"/>
+      <xs:element name="ValidationDate" type="xs:long" minOccurs="0"/>
+      <xs:element name="Advanced" xmime:expectedContentTypes="application/octet-stream" type="xs:base64Binary" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DigestInfo">
+    <xs:sequence>
+      <xs:element name="Digest" type="xs:string"/>
+      <xs:element name="DocumentId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidateDocumentInfo">
+    <xs:sequence>
+      <xs:element name="properties" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Property" type="tns:Property" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AppendStringListPropertyRequest">
+    <xs:sequence>
+      <xs:element name="documentId" type="xs:string"/>
+      <xs:element name="property" type="xs:string"/>
+      <xs:element name="values" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ChangeStorageAreaResponse">
+    <xs:sequence>
+      <xs:element name="success" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="success" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="failed" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="failed" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDocumentRequest">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetAnnotationsRequest">
+    <xs:complexContent>
+      <xs:extension base="tns:GetDocumentRequest">
+        <xs:sequence>
+          <xs:element name="Properties" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Property" type="tns:Property" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ValidateDocumentWithInfoResponse">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+      <xs:element name="validateInfo" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ValidateInfo" type="tns:ValidateDocumentInfo" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UpdateDocumentRequest">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+      <xs:element name="Document" xmime:expectedContentTypes="application/octet-stream" type="xs:base64Binary"/>
+      <xs:element name="SSOID" type="xs:string"/>
+      <xs:element name="properties" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Property" type="tns:Property" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UpdatePropertiesRequest">
+    <xs:sequence>
+      <xs:element name="DocumentId" type="xs:string"/>
+      <xs:element name="properties" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Property" type="tns:Property" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SetFolderPermissionsRequest">
+    <xs:sequence>
+      <xs:element name="Path" type="xs:string"/>
+      <xs:element name="permissions" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Permission" type="tns:Permission" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Store" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SearchDocumentsInFolderRequest">
+    <xs:sequence>
+      <xs:element name="Path" type="xs:string"/>
+      <xs:element name="Store" type="xs:string" minOccurs="0"/>
+      <xs:element name="DocumentClasses" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="DocumentClass" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RetrieveDocAndAnnotationsResponse">
+    <xs:sequence>
+      <xs:element name="Document" xmime:expectedContentTypes="application/octet-stream" type="xs:base64Binary"/>
+      <xs:element name="annotations" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Annotation" xmime:expectedContentTypes="application/octet-stream" type="xs:base64Binary" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetPermissionsResponse">
+    <xs:sequence>
+      <xs:element name="permissions" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Permission" type="tns:Permission" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDocumentResponse">
+    <xs:sequence>
+      <xs:element name="Document" xmime:expectedContentTypes="application/octet-stream" type="xs:base64Binary"/>
+      <xs:element name="properties" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Property" type="tns:Property" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GetDigestRequest">
+    <xs:sequence>
+      <xs:element name="Documents">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="DocumentId" type="xs:string" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DigestType" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DigestInfoArray">
+    <xs:sequence>
+      <xs:element name="item" type="tns:DigestInfo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="signType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CADES"/>
+      <xs:enumeration value="XMLDSIG"/>
+      <xs:enumeration value="XADES"/>
+      <xs:enumeration value="EIS"/>
+      <xs:enumeration value="DEFERRED"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ValidationResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VALID"/>
+      <xs:enumeration value="INVALID"/>
+      <xs:enumeration value="ERROR"/>
+      <xs:enumeration value="NOT_FOUND"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
