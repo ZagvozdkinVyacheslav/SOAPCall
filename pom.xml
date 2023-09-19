@@ -95,16 +95,19 @@
 			</plugin>
 
 			<plugin>
+
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>jaxws-maven-plugin</artifactId>
 				<version>2.6</version>
 				<executions>
 					<execution>
+
 						<id>wsdltoJava</id>
 						<goals>
 							<goal>wsimport</goal>
 						</goals>
 						<configuration>
+
 							<wsdlDirectory>src/main/resources/wsdl</wsdlDirectory>
 							<wsdlFiles>
 								<wsdlFile>CustomWebService2.wsdl</wsdlFile>
@@ -113,8 +116,9 @@
 								<vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
 							</vmArgs>
 							<keep>true</keep>
-							<packageName>com.wsdl</packageName>
-							<sourceDestDir>src/main/resources/wsdl</sourceDestDir>
+							<packageName>wsdl</packageName>
+							<sourceDestDir>${project.build.directory}/generated-sources/</sourceDestDir>
+
 						</configuration>
 					</execution>
 				</executions>
