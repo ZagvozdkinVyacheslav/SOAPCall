@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 import wsdl.GetDocumentResponse;
-
 import javax.xml.ws.Holder;
 import java.io.*;
 

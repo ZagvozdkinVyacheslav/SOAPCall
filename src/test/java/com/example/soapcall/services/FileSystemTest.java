@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import wsdl.GetDocumentResponse;
-
 import javax.xml.ws.Holder;
 import java.io.File;
 import java.io.FilenameFilter;

@@ -3,17 +3,13 @@ package com.example.soapcall.config;
 
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import wsdl.CustomWebService;
 import wsdl.CustomWebServiceImpl;
-
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.handler.MessageContext;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
