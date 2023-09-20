@@ -3,7 +3,6 @@ package com.example.soapcall.controllers;
 
 
 import com.example.soapcall.services.FileSystem;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +14,6 @@ import wsdl.CustomWebServiceImpl;
 import wsdl.ErrorMessageExceptionException;
 import wsdl.GetDocumentRequest;
 import wsdl.GetDocumentResponse;
-
 import javax.activation.DataHandler;
 import javax.xml.ws.Holder;
 import java.io.File;

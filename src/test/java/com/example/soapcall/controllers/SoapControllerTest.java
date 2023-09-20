@@ -1,17 +1,11 @@
 package com.example.soapcall.controllers;
 
-import com.example.soapcall.services.FileSystem;
-import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.ResponseEntity;
 import wsdl.ErrorMessageExceptionException;
-
 import java.io.IOException;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatIOException;
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 
